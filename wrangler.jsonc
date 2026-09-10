@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "journeythroughbh",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-10",
+
+  // Static site lives in ./public. The Worker only runs when no asset matches
+  // (i.e. for /api/contact and unknown paths).
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+
+  // Cloudflare Email Service binding used by src/worker.js to deliver
+  // contact-form messages. Requires the sending domain to be onboarded in
+  // Email Service (see README). "remote": true makes `wrangler dev` send real
+  // email; remove it to only log emails locally.
+  "send_email": [
+    { "name": "EMAIL" }
+  ],
+
+  // Non-secret configuration. Secrets (TURNSTILE_SECRET) are set with
+  // `wrangler secret put`, never here.
+  "vars": {
+    "CONTACT_TO": "TODO-owner@example.com",
+    "CONTACT_FROM": "no-reply@journeythroughbh.com",
+    "TURNSTILE_HOSTNAMES": "journeythroughbh.com,www.journeythroughbh.com"
+  },
+
+  // Preview URLs for pull requests via Workers Builds.
+  "preview_urls": true,
+
+  // Workers Logs. The Worker never logs form contents, only error classes.
+  "observability": {
+    "enabled": true
+  }
+}

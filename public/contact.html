@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Journey Through Behavioral Health</title>
+<meta name="description" content="Book a free 15-minute consultation or send a short message to Journey Through Behavioral Health. Phone, email, hours, and location.">
+<link rel="canonical" href="https://journeythroughbh.com/contact">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Journey Through Behavioral Health">
+<meta property="og:title" content="Contact · Journey Through Behavioral Health">
+<meta property="og:description" content="Book a free 15-minute consultation or send a short message to Journey Through Behavioral Health. Phone, email, hours, and location.">
+<meta property="og:url" content="https://journeythroughbh.com/contact">
+<meta property="og:image" content="https://journeythroughbh.com/images/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5f1e8">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 25c4-2 5-10 9-11s4 8 8 7 4-9 6-10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="8" r="2.4" fill="currentColor"/></svg><span>Journey Through Behavioral Health</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/what-to-expect">What to expect</a></li>
+<li><a href="/fees">Fees &amp; insurance</a></li>
+<li><a href="/faq">FAQ</a></li>
+<li class="nav-cta"><a href="/contact" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+  <div class="page-title">
+    <p class="eyebrow">Contact</p>
+    <h1>Book a free 15-minute consultation</h1>
+    <p class="lead">Tell me how to reach you and I'll get back to you to set up a time. That's all this step needs.</p>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div class="notice" role="note">
+        <p><strong>This site is not for emergencies.</strong> If you are in crisis, call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline) or call 911. <a href="/crisis">More crisis resources</a></p>
+      </div>
+
+      <form class="form" id="contact-form" action="/api/contact" method="post" novalidate>
+        <p class="hint"><strong>Please don't include personal health details here.</strong> We'll discuss those privately. This form only asks for your name and a way to reach you.</p>
+
+        <div class="field" data-field="name">
+          <label for="name">What should I call you?</label>
+          <input type="text" id="name" name="name" autocomplete="name" required maxlength="100" aria-describedby="name-err">
+          <p class="error-msg" id="name-err" aria-live="polite"></p>
+        </div>
+
+        <div class="field" data-field="method">
+          <fieldset>
+            <legend>How would you like me to reply?</legend>
+            <div class="choices">
+              <label><input type="radio" name="method" value="email" required> Email</label>
+              <label><input type="radio" name="method" value="phone" required> Phone</label>
+            </div>
+          </fieldset>
+          <p class="error-msg" aria-live="polite"></p>
+        </div>
+
+        <div class="field" data-field="email">
+          <label for="email">Email</label>
+          <span class="hint" id="email-hint">Required if you chose email.</span>
+          <input type="email" id="email" name="email" autocomplete="email" maxlength="254" aria-describedby="email-hint email-err">
+          <p class="error-msg" id="email-err" aria-live="polite"></p>
+        </div>
+
+        <div class="field" data-field="phone">
+          <label for="phone">Phone</label>
+          <span class="hint" id="phone-hint">Required if you chose phone. Let me know in the message if it's okay to leave a voicemail.</span>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="40" aria-describedby="phone-hint phone-err">
+          <p class="error-msg" id="phone-err" aria-live="polite"></p>
+        </div>
+
+        <div class="field" data-field="message">
+          <label for="message">Anything else? <span class="count">(optional)</span></label>
+          <span class="hint" id="message-hint">Good times to call, or a question. Please keep health details for our conversation.</span>
+          <textarea id="message" name="message" maxlength="500" aria-describedby="message-hint message-count message-err"></textarea>
+          <p class="count" id="message-count" aria-live="polite">500 characters max</p>
+          <p class="error-msg" id="message-err" aria-live="polite"></p>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Cloudflare Turnstile. TODO: replace the test site key below with the production key from the Cloudflare dashboard.
+             Test key 1x00000000000000000000AA always passes and is safe locally; the Worker's real secret will reject it in production. -->
+        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-action="contact" data-theme="light"></div>
+
+        <p class="hint">By sending this form you're only agreeing to be contacted by the method you chose. Nothing here goes into a health record. <a href="/privacy">Privacy policy</a></p>
+
+        <button class="btn" type="submit">Send message</button>
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <aside class="stack">
+      <h2>Other ways to reach me</h2>
+      <address>
+        <p><strong>Phone</strong><br><mark class="todo">TODO: phone number as a tel: link</mark></p>
+        <p><strong>Email</strong><br><mark class="todo">TODO: public email address</mark><br><small>Email isn't a secure channel; keep health details out of it too.</small></p>
+        <p><strong>Hours</strong><br><mark class="todo">TODO: e.g. Monday to Thursday, 9am to 6pm</mark></p>
+        <p><strong>Response time</strong><br><mark class="todo">TODO: e.g. within one business day</mark></p>
+        <p><strong>Location</strong><br><mark class="todo">TODO: office address, or "Telehealth only, serving STATE"</mark><br><a href="https://www.openstreetmap.org/search?query=TODO" rel="noopener">Open in maps</a> <mark class="todo">TODO: replace with a real map link</mark></p>
+        <p><strong>Existing clients</strong><br><a href="https://TODO.example.com" rel="noopener">Client portal</a> <mark class="todo">TODO: portal URL</mark></p>
+      </address>
+    </aside>
+  </div>
+</div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="crisis" role="note">
+      <strong>This site is not for emergencies.</strong>
+      If you are in crisis, call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline) or call 911.
+      <a href="/crisis">More crisis resources</a>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="/contact">Book a free 15-minute consultation</a></li>
+        <li><mark class="todo">TODO: phone</mark></li>
+        <li><mark class="todo">TODO: public email</mark></li>
+        <li><mark class="todo">TODO: city, state or "telehealth only"</mark></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Practice</h2>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/fees">Fees &amp; insurance</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/notice-of-privacy-practices">Notice of Privacy Practices</a></li>
+        <li><a href="/crisis">Crisis resources</a></li>
+      </ul>
+    </div>
+    <p class="fine">&copy; 2026 Journey Through Behavioral Health.
+      <mark class="todo">TODO: Clinician name, credentials</mark> &middot;
+      <mark class="todo">TODO: License type and number, state(s)</mark>.
+      No cookies, no trackers.</p>
+  </div>
+</footer>
+<script src="/js/nav.js" defer></script>
+<script src="/js/contact.js" defer></script>
+</body>
+</html>

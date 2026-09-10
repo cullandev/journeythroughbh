@@ -1,0 +1,15 @@
+{
+  "name": "journeythroughbh",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website for Journey Through Behavioral Health, deployed to Cloudflare Workers with static assets.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "pages": "python scripts/build.py",
+    "check": "python scripts/build.py --check"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
