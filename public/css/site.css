@@ -1,6 +1,6 @@
 /* Journey Through Behavioral Health
    Plain CSS, custom properties, mobile first. See DESIGN.md for the plan
-   (revision 2: "summer green" direction from Claude Design). */
+   (autumn variant: maple mark, clay accent). */
 
 /* ---------- Fonts (self-hosted; see /fonts/README.md) ---------- */
 @font-face {
@@ -22,11 +22,11 @@
 :root {
   --paper: #f7f3ea;   /* page background */
   --sand: #e2dacb;    /* rules, fields, quiet surfaces */
-  --leaf: #e6ede3;    /* pale green section tint */
+  --leaf: #f3e7d6;    /* warm section tint (autumn) */
   --ink: #2c4636;     /* wordmark green: text and headings */
   --stone: #575b55;   /* secondary text */
-  --sky: #2a6480;     /* horizon blue: actions and links */
-  --sky-deep: #224f66;
+  --sky: #98421f;     /* maple clay: actions and links (autumn) */
+  --sky-deep: #7d3618;
   --line: #d9d1c3;
 
   --font-body: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
