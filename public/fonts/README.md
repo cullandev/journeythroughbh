@@ -5,7 +5,7 @@ system UI font, and every page still works.
 
 | File | Family | Source (SIL Open Font License) |
 |------|--------|--------------------------------|
-| `Fraunces-Variable.woff2` | Fraunces (variable, wght 300–700) | https://github.com/undercasetype/Fraunces |
+| `Newsreader-Variable.woff2` | Newsreader (variable, wght 300–700, opsz) | https://github.com/productiontype/Newsreader |
 | `AtkinsonHyperlegibleNext-Variable.woff2` | Atkinson Hyperlegible Next (variable) | https://github.com/googlefonts/atkinson-hyperlegible-next |
 
 Steps:
@@ -14,7 +14,7 @@ Steps:
 2. Convert to WOFF2 and, ideally, subset to Latin to keep each file well under 100 KB:
    ```bash
    pip install fonttools brotli
-   pyftsubset Fraunces[SOFT,WONK,opsz,wght].ttf --unicodes="U+0000-00FF,U+2010-2027,U+2032-2033,U+20AC,U+2212" --flavor=woff2 --output-file=Fraunces-Variable.woff2
+   pyftsubset Newsreader[opsz,wght].ttf --unicodes="U+0000-00FF,U+2010-2027,U+2032-2033,U+20AC,U+2212" --flavor=woff2 --output-file=Newsreader-Variable.woff2
    pyftsubset AtkinsonHyperlegibleNext[wght].ttf --unicodes="U+0000-00FF,U+2010-2027,U+2032-2033,U+20AC,U+2212" --flavor=woff2 --output-file=AtkinsonHyperlegibleNext-Variable.woff2
    ```
 3. Drop both `.woff2` files in this folder and commit them. The `@font-face` rules in

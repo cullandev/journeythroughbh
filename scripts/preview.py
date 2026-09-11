@@ -10,7 +10,6 @@ For the real thing (Turnstile verification, email delivery) use `wrangler dev`.
 """
 import http.server
 import json
-import socketserver
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
@@ -20,6 +19,7 @@ PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8788
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    protocol_version = "HTTP/1.1"
     def __init__(self, *a, **kw):
         super().__init__(*a, directory=str(ROOT), **kw)
 
@@ -61,13 +61,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         else:
             self.send_response(303)
             self.send_header("Location", "/thank-you")
+            self.send_header("Content-Length", "0")
             self.end_headers()
 
     def log_message(self, fmt, *args):
         sys.stderr.write("%s %s\n" % (self.command, self.path))
 
 
-socketserver.TCPServer.allow_reuse_address = True
-with socketserver.TCPServer(("127.0.0.1", PORT), Handler) as httpd:
+http.server.ThreadingHTTPServer.allow_reuse_address = True
+with http.server.ThreadingHTTPServer(("127.0.0.1", PORT), Handler) as httpd:
     print(f"preview: http://localhost:{PORT}  (Ctrl+C to stop)")
     httpd.serve_forever()

@@ -159,7 +159,44 @@ and no other transitions run.
 +------------------------------------------------------------------+
 ```
 
-## Revisions after review
+## Revision 2: the "summer green" direction (2026-09-11)
+
+Claude Design produced six rounds of logo work and two home-page directions; the owner
+chose the summer (green tree, sky accent) version over the autumn (maple, clay accent).
+What changed on the site as a result:
+
+- **Signature element.** The abstract drawn path is replaced by the illustrated mark: a
+  winding road through green hills toward a tree at sunrise. It is the hero image on Home,
+  the header mark, the favicon, and, cropped to a horizon strip of just road and hills, the
+  opener image on every inner page. The waypoint idea survives in the mobile menu, where
+  each item is a hollow dot on a rule and the current page is the filled one.
+- **Palette.** Clay is gone (it belonged to the autumn maple). Text and headings use the
+  wordmark green; actions use the horizon blue. Two values were darkened slightly from the
+  mockups so every pairing clears 4.5:1.
+
+  | Name  | Hex       | Use                                   | Lowest ratio in use |
+  |-------|-----------|---------------------------------------|---------------------|
+  | Paper | `#F7F3EA` | Page background                       |                     |
+  | Sand  | `#E2DACB` | Rules, fields, quiet surfaces         |                     |
+  | Leaf  | `#E6EDE3` | Pale green section tint               |                     |
+  | Ink   | `#2C4636` | Text, headings, dark CTA band         | 7.4 on Sand         |
+  | Stone | `#575B55` | Secondary text                        | 5.0 on Sand         |
+  | Sky   | `#2A6480` | Buttons, links, eyebrows              | 4.7 on Sand, 5.9 white-on-Sky |
+
+- **Type.** Headings move from Fraunces to Newsreader (also OFL, self-hosted). Body stays
+  Atkinson Hyperlegible Next.
+- **Home structure.** Hero (headline left, round mark right), a leaf-tinted "who I work
+  with" band, formats, therapist intro with an arched photo, the practical parts, and a
+  dark green closing band. The trail line is retired.
+- **Fees.** The three tiles become a ruled row (a top rule, small caps label, large
+  Newsreader amount) instead of sand cards.
+- **Motion.** Still one moment: the hero mark settles in on first paint. Nothing under
+  `prefers-reduced-motion`.
+- **Copy.** Headline and section titles from the mockups were adopted. Practice facts the
+  mockups revealed (Connecticut, LCSW, adolescents 13 to 18 and adults, online and in
+  person) are now in the copy; name, town, and license number remain `TODO`.
+
+## Revisions after review (revision 1)
 
 The first draft of this plan had: an off-white + sage + terracotta palette (the standard
 "wellness" set), Inter for body, and a three-card "specialties" row. Changes made:

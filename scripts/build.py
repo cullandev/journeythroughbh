@@ -37,10 +37,8 @@ NAV = [
 ]
 
 LOGO = (
-    '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">'
-    '<path d="M4 25c4-2 5-10 9-11s4 8 8 7 4-9 6-10" fill="none" stroke="currentColor" '
-    'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
-    '<circle cx="28" cy="8" r="2.4" fill="currentColor"/></svg>'
+    '<img class="mark" src="/images/logo-mark-small.png" width="112" height="105" alt="">'
+    f'<img class="wordmark" src="/images/wordmark.webp" width="720" height="115" alt="{NAME}">'
 )
 
 
@@ -63,8 +61,11 @@ def head(meta):
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{SITE}/images/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f5f1e8">
-<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#f7f3ea">
+<link rel="icon" href="/images/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/images/icon-180.png">
 <link rel="stylesheet" href="/css/site.css">
 </head>"""
 
@@ -80,7 +81,7 @@ def header(current):
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/">{LOGO}<span>{NAME}</span></a>
+    <a class="brand" href="/">{LOGO}</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
@@ -109,7 +110,7 @@ def footer(scripts):
         <li><a href="/contact">Book a free 15-minute consultation</a></li>
         <li><mark class="todo">TODO: phone</mark></li>
         <li><mark class="todo">TODO: public email</mark></li>
-        <li><mark class="todo">TODO: city, state or "telehealth only"</mark></li>
+        <li>Online across Connecticut &middot; in person in <mark class="todo">TODO: town</mark></li>
       </ul>
     </div>
     <div>
@@ -123,8 +124,8 @@ def footer(scripts):
       </ul>
     </div>
     <p class="fine">&copy; {year} {NAME}.
-      <mark class="todo">TODO: Clinician name, credentials</mark> &middot;
-      <mark class="todo">TODO: License type and number, state(s)</mark>.
+      <mark class="todo">TODO: Clinician name</mark>, LCSW &middot;
+      Licensed Clinical Social Worker, Connecticut, license <mark class="todo">TODO: number</mark>.
       No cookies, no trackers.</p>
   </div>
 </footer>{tags}

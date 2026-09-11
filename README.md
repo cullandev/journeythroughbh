@@ -145,7 +145,6 @@ or, if you add the beacon script, extend `script-src` and `connect-src` in both
 
 - [ ] Every `TODO:` below is resolved and `grep -r "TODO" src public` returns nothing
 - [ ] Fonts added to `public/fonts/` (see `public/fonts/README.md`)
-- [ ] `public/images/og.png` added (1200×630 social preview image)
 - [ ] Real headshot replaces `images/headshot-placeholder.svg`, with descriptive alt text
 - [ ] Turnstile site key replaced in `contact.html`; secret set with `wrangler secret put`
 - [ ] Email Service domain onboarded; `CONTACT_TO` / `CONTACT_FROM` set
@@ -207,11 +206,13 @@ Page-specific:
   are marked TODO rather than assumed.
 - **Email delivery via Cloudflare Email Service** (first-party, no extra vendor, no API
   key to leak). It requires the Workers paid plan; the README shows how to swap in Resend.
-- **Fonts:** Fraunces and Atkinson Hyperlegible Next were chosen but the font files are
+- **Fonts:** Newsreader and Atkinson Hyperlegible Next were chosen but the font files are
   not in the repo (they need to be downloaded and subset by the owner or developer).
   Fallbacks are in place so nothing breaks.
 - **Turnstile test key** is in `contact.html` so the form works locally out of the box.
   In production the real secret will reject it until replaced; the form fails closed.
+- **Logo and palette** come from the Claude Design "summer green" direction (see `DESIGN.md`,
+  revision 2). The illustrated mark is a raster PNG/WebP, so it is served at fixed sizes.
 - **The map link points to OpenStreetMap** rather than Google to avoid sending referrer
   data to an ad network. Swap it if the owner prefers Google Maps.
 - **Copy is written in first person** ("I work with…") on the assumption of a solo
