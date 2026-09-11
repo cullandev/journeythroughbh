@@ -5,6 +5,7 @@ HTML handling (/about -> about.html), serves 404.html for unknown paths, and
 fakes POST /api/contact so the form can be exercised without wrangler.
 
     python scripts/preview.py            # http://localhost:8788
+    python scripts/preview.py 8788 lan   # also reachable from other devices on your network
 
 For the real thing (Turnstile verification, email delivery) use `wrangler dev`.
 """
@@ -16,6 +17,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1] / "public"
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8788
+HOST = "0.0.0.0" if "lan" in sys.argv[2:] else "127.0.0.1"
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -69,6 +71,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 
 http.server.ThreadingHTTPServer.allow_reuse_address = True
-with http.server.ThreadingHTTPServer(("127.0.0.1", PORT), Handler) as httpd:
+with http.server.ThreadingHTTPServer((HOST, PORT), Handler) as httpd:
     print(f"preview: http://localhost:{PORT}  (Ctrl+C to stop)")
+    if HOST == "0.0.0.0":
+        import socket
+        try:
+            ip = socket.gethostbyname(socket.gethostname())
+            print(f"on your network: http://{ip}:{PORT}")
+        except OSError:
+            pass
     httpd.serve_forever()
