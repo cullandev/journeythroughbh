@@ -5,6 +5,7 @@ JavaScript, hosted on **Cloudflare Workers (static assets)** with one Worker rou
 handles the contact form.
 
 - Design plan: [DESIGN.md](DESIGN.md)
+- Cloudflare setup, step by step: [docs/CLOUDFLARE-SETUP.md](docs/CLOUDFLARE-SETUP.md)
 - No cookies, no analytics, no third-party fonts or embeds. **No cookie banner is needed**
   because the site sets no cookies and loads nothing that does. The only external request
   is Cloudflare Turnstile, on the Contact page only, to stop form spam.
@@ -102,7 +103,9 @@ dashboard under **Settings → Variables**:
 
 ### Email delivery (Cloudflare Email Service)
 
-The Worker sends through the `EMAIL` binding (Cloudflare Email Service, Workers paid plan).
+The Worker sends through the `EMAIL` binding (Cloudflare Email Service). Sending to a
+*verified destination address* in your account is free on every plan; sending anywhere
+else needs Workers Paid.
 Setup:
 
 1. Dashboard → **Compute & AI → Email Service → Onboard domain** → choose
