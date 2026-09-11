@@ -159,6 +159,14 @@ and no other transitions run.
 +------------------------------------------------------------------+
 ```
 
+## Revision 3: switched to the autumn variant (2026-09-11)
+
+After seeing both side by side, the owner chose the **autumn** mark. `main` now carries the
+maple illustration, the clay accent (`#98421F`, 4.8:1 on Sand) in place of horizon blue,
+and a warm cream tint (`#F3E7D6`) in place of the pale green band. Everything else in
+revision 2 still applies. The summer green version is preserved on branch `summer` and
+tag `summer-v1`; switching back is `git merge summer` or a checkout of that tag.
+
 ## Revision 2: the "summer green" direction (2026-09-11)
 
 Claude Design produced six rounds of logo work and two home-page directions; the owner
