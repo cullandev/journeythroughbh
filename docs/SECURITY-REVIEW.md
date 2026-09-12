@@ -63,7 +63,7 @@ second custom domain on the Worker, then add the "Redirect from WWW to root" rul
 
 ### 5. Email subject built from user input without newline stripping
 
-**Severity:** Low. **Status:** open, one-line fix recommended.
+**Severity:** Low. **Status:** fixed (control characters are stripped from every single-line field; the message keeps its line breaks).
 
 `subject: \`Website inquiry from ${name}\``. The name is length-capped and trimmed but a
 `\r\n` inside it is not removed. Cloudflare's Email Service takes a JSON object and
@@ -150,5 +150,4 @@ Builds.
    works.
 2. Add the WAF rate-limit rule and Bot Fight Mode (finding 3).
 3. Attach `www` and redirect it (finding 4).
-4. Strip newlines from `name` in the Worker (finding 5).
-5. Replace the placeholder links along with the rest of the TODO list (finding 8).
+4. Replace the placeholder links along with the rest of the TODO list (finding 8).
