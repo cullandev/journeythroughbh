@@ -19,7 +19,7 @@ You need:
 - A Cloudflare account (free) at https://dash.cloudflare.com.
 - The GitHub repo pushed, with `main` as the branch you want live.
 - Access to wherever `journeythroughbh.org` is registered (to change nameservers), or
-  the domain not yet purchased (Cloudflare Registrar sells `.com` at cost).
+  the domain not yet purchased (Cloudflare Registrar sells domains at cost).
 - Node.js on any machine where you want to run `wrangler` commands. Every step below
   can also be done in the dashboard, so Node is optional.
 
