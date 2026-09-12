@@ -1,6 +1,6 @@
 # Cloudflare setup, end to end
 
-Everything needed to take this repo from GitHub to a live site at `journeythroughbh.com`,
+Everything needed to take this repo from GitHub to a live site at `journeythroughbh.org`,
 in the order that avoids backtracking. Verified against Cloudflare's documentation on
 2026-09-11. Dashboard labels drift, so if a menu item is named slightly differently,
 look for the nearest match.
@@ -18,7 +18,7 @@ You need:
 
 - A Cloudflare account (free) at https://dash.cloudflare.com.
 - The GitHub repo pushed, with `main` as the branch you want live.
-- Access to wherever `journeythroughbh.com` is registered (to change nameservers), or
+- Access to wherever `journeythroughbh.org` is registered (to change nameservers), or
   the domain not yet purchased (Cloudflare Registrar sells `.com` at cost).
 - Node.js on any machine where you want to run `wrangler` commands. Every step below
   can also be done in the dashboard, so Node is optional.
@@ -42,7 +42,7 @@ the zone to be on Cloudflare DNS.
 
 **If the domain is registered elsewhere**
 
-1. Dashboard → **Add a domain** → type `journeythroughbh.com` → **Quick scan for DNS
+1. Dashboard → **Add a domain** → type `journeythroughbh.org` → **Quick scan for DNS
    records** → choose the **Free** plan.
 2. Cloudflare shows two nameservers (`*.ns.cloudflare.com`). At your registrar, replace
    the existing nameservers with those two.
@@ -118,19 +118,19 @@ production. Pushes to other branches upload a preview version without promoting 
 ## 3. Attach the custom domain
 
 1. Worker → **Settings → Domains & Routes → Add → Custom Domain**.
-2. Enter `journeythroughbh.com` → **Add Custom Domain**.
-3. Repeat for `www.journeythroughbh.com`.
+2. Enter `journeythroughbh.org` → **Add Custom Domain**.
+3. Repeat for `www.journeythroughbh.org`.
 
 Cloudflare creates the DNS records and issues certificates automatically. Both
 hostnames now serve the Worker. Give it a couple of minutes, then open
-`https://journeythroughbh.com`.
+`https://journeythroughbh.org`.
 
 If you prefer configuration as code, the equivalent in `wrangler.jsonc` is:
 
 ```jsonc
 "routes": [
-  { "pattern": "journeythroughbh.com", "custom_domain": true },
-  { "pattern": "www.journeythroughbh.com", "custom_domain": true }
+  { "pattern": "journeythroughbh.org", "custom_domain": true },
+  { "pattern": "www.journeythroughbh.org", "custom_domain": true }
 ]
 ```
 
@@ -148,7 +148,7 @@ Turnstile is account-level, not zone-level.
    | Setting | Value |
    |---|---|
    | Widget name | Journey Through BH contact form |
-   | Hostname management | `journeythroughbh.com`, `www.journeythroughbh.com`, and your `*.workers.dev` hostname if you want the form to work on previews |
+   | Hostname management | `journeythroughbh.org`, `www.journeythroughbh.org`, and your `*.workers.dev` hostname if you want the form to work on previews |
    | Widget mode | **Managed** (shows a checkbox only when it's unsure; invisible for most people) |
    | Pre-clearance | Off |
 
@@ -181,8 +181,8 @@ The Worker sends each inquiry through the `EMAIL` binding to `CONTACT_TO`, from
 ### 5a. Onboard the sending domain
 
 1. Dashboard → **Compute & AI → Email Service → Email Sending → Onboard Domain**.
-2. Choose `journeythroughbh.com`. Cloudflare adds MX records on
-   `cf-bounce.journeythroughbh.com`, plus SPF, DKIM, and DMARC TXT records, and locks
+2. Choose `journeythroughbh.org`. Cloudflare adds MX records on
+   `cf-bounce.journeythroughbh.org`, plus SPF, DKIM, and DMARC TXT records, and locks
    them. Nothing to copy by hand because the zone is on Cloudflare DNS.
 3. Wait for **Verified** (usually 5 to 15 minutes).
 
@@ -205,14 +205,14 @@ push):
 | Variable | Value |
 |---|---|
 | `CONTACT_TO` | the verified practice inbox from 5b |
-| `CONTACT_FROM` | `no-reply@journeythroughbh.com` (any address on the onboarded domain) |
+| `CONTACT_FROM` | `no-reply@journeythroughbh.org` (any address on the onboarded domain) |
 
 Values set in the dashboard are overwritten on the next deploy by whatever is in
 `wrangler.jsonc`, so put the final values in the file, not just the dashboard.
 
 ### 5d. Optional: an inbox on the domain
 
-If the practice wants `hello@journeythroughbh.com` to actually receive mail, use
+If the practice wants `hello@journeythroughbh.org` to actually receive mail, use
 **Email Routing → Routing rules → Create address** to forward it to the verified
 destination address. Free, and unrelated to the contact form.
 
@@ -235,11 +235,11 @@ Dashboard → the domain → **Rules → Redirect Rules → Create rule** → te
 
 | Field | Value |
 |---|---|
-| When incoming requests match | Hostname equals `www.journeythroughbh.com` |
-| Then | Dynamic redirect, expression `concat("https://journeythroughbh.com", http.request.uri.path)`, status 301, preserve query string on |
+| When incoming requests match | Hostname equals `www.journeythroughbh.org` |
+| Then | Dynamic redirect, expression `concat("https://journeythroughbh.org", http.request.uri.path)`, status 301, preserve query string on |
 
-Deploy. `https://www.journeythroughbh.com/about` should now land on
-`https://journeythroughbh.com/about`.
+Deploy. `https://www.journeythroughbh.org/about` should now land on
+`https://journeythroughbh.org/about`.
 
 ---
 
@@ -273,24 +273,24 @@ policy. Prefer automatic.
 
 Run through these on the live domain:
 
-- [ ] `https://journeythroughbh.com` loads; `http://` redirects to `https://`; `www`
+- [ ] `https://journeythroughbh.org` loads; `http://` redirects to `https://`; `www`
       redirects to the apex.
-- [ ] https://securityheaders.com/?q=journeythroughbh.com scores **A** or better.
+- [ ] https://securityheaders.com/?q=journeythroughbh.org scores **A** or better.
       (The CSP, HSTS, nosniff, referrer, permissions, and frame-ancestors headers
       come from `public/_headers`.)
 - [ ] Browser Network tab on the home page shows only requests to
-      `journeythroughbh.com`. On the Contact page, additionally
+      `journeythroughbh.org`. On the Contact page, additionally
       `challenges.cloudflare.com`. Nothing else.
 - [ ] No cookies are set (DevTools → Application → Cookies). So no cookie banner.
 - [ ] The contact form: (a) sends and the email arrives; (b) fails with the
       always-fails Turnstile secret; (c) works with JavaScript disabled and lands on
       `/thank-you`.
-- [ ] `https://journeythroughbh.com/does-not-exist` shows the branded 404 with a 404
+- [ ] `https://journeythroughbh.org/does-not-exist` shows the branded 404 with a 404
       status.
 - [ ] Lighthouse (Chrome DevTools) on mobile: 95+ on Home and Contact. Fonts must be
       in `public/fonts/` first or the font 404s will cost a few points.
 - [ ] Google Search Console: add the property, submit
-      `https://journeythroughbh.com/sitemap.xml`.
+      `https://journeythroughbh.org/sitemap.xml`.
 - [ ] Crisis notice visible in the footer of every page.
 
 ---

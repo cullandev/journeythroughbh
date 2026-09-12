@@ -4,4 +4,4 @@ TURNSTILE_SECRET=1x0000000000000000000000000000000AA
 # Leave hostnames empty locally so the hostname check is skipped.
 TURNSTILE_HOSTNAMES=
 CONTACT_TO=you@example.com
-CONTACT_FROM=no-reply@journeythroughbh.com
+CONTACT_FROM=no-reply@journeythroughbh.org

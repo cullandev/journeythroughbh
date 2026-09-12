@@ -24,7 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src" / "pages"
 OUT = ROOT / "public"
-SITE = "https://journeythroughbh.com"
+SITE = "https://journeythroughbh.org"
 NAME = "Journey Through Behavioral Health"
 
 NAV = [

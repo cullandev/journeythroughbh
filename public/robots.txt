@@ -3,4 +3,4 @@ Allow: /
 Disallow: /thank-you
 Disallow: /api/
 
-Sitemap: https://journeythroughbh.com/sitemap.xml
+Sitemap: https://journeythroughbh.org/sitemap.xml

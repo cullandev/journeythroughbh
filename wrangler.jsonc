@@ -25,8 +25,8 @@
   // `wrangler secret put`, never here.
   "vars": {
     "CONTACT_TO": "TODO-owner@example.com",
-    "CONTACT_FROM": "no-reply@journeythroughbh.com",
-    "TURNSTILE_HOSTNAMES": "journeythroughbh.com,www.journeythroughbh.com"
+    "CONTACT_FROM": "no-reply@journeythroughbh.org",
+    "TURNSTILE_HOSTNAMES": "journeythroughbh.org,www.journeythroughbh.org"
   },
 
   // Preview URLs for pull requests via Workers Builds.

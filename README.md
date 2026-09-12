@@ -82,8 +82,8 @@ python scripts/preview.py        # http://localhost:8788
 
 ### Custom domain
 
-In the Worker's **Settings → Domains & Routes**, add `journeythroughbh.com` and
-`www.journeythroughbh.com` as custom domains. The domain must be on Cloudflare DNS.
+In the Worker's **Settings → Domains & Routes**, add `journeythroughbh.org` and
+`www.journeythroughbh.org` as custom domains. The domain must be on Cloudflare DNS.
 Then update `SITE` in `scripts/build.py` if the domain differs, rebuild, and commit.
 
 ### Secrets and variables
@@ -109,7 +109,7 @@ else needs Workers Paid.
 Setup:
 
 1. Dashboard → **Compute & AI → Email Service → Onboard domain** → choose
-   `journeythroughbh.com` and add the SPF/DKIM records it gives you.
+   `journeythroughbh.org` and add the SPF/DKIM records it gives you.
 2. Make sure `CONTACT_FROM` uses that domain and `CONTACT_TO` is the inbox that should
    receive inquiries. If `CONTACT_TO` is on a different domain, no extra setup is needed.
 
@@ -119,7 +119,7 @@ If you'd rather use Resend or another provider, replace the `env.EMAIL.send(...)
 
 ### Turnstile
 
-1. Dashboard → **Turnstile → Add widget**. Hostname: `journeythroughbh.com` (add the
+1. Dashboard → **Turnstile → Add widget**. Hostname: `journeythroughbh.org` (add the
    `workers.dev` preview hostname too if you want the form working on previews). Widget
    mode: Managed.
 2. Put the **site key** in `src/pages/contact.html` (replace the `1x0000…AA` test key),
