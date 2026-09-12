@@ -99,10 +99,8 @@
           <label for="website">Leave this field empty</label>
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
         </div>
-
-        <!-- Cloudflare Turnstile. TODO: replace the test site key below with the production key from the Cloudflare dashboard.
-             Test key 1x00000000000000000000AA always passes and is safe locally; the Worker's real secret will reject it in production. -->
-        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-action="contact" data-theme="light"></div>
+        <!-- Cloudflare Turnstile production widget. For local dev with the test secret, swap in test site key 1x00000000000000000000AA. -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEw6XkLJqnNuL5R5" data-action="contact" data-theme="light"></div>
 
         <p class="hint">By sending this form you're only agreeing to be contacted by the method you chose. Nothing here goes into a health record. <a href="/privacy">Privacy policy</a></p>
 

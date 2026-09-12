@@ -207,8 +207,10 @@ push):
 | `CONTACT_TO` | the verified practice inbox from 5b |
 | `CONTACT_FROM` | `no-reply@journeythroughbh.org` (any address on the onboarded domain) |
 
-Values set in the dashboard are overwritten on the next deploy by whatever is in
-`wrangler.jsonc`, so put the final values in the file, not just the dashboard.
+`CONTACT_TO` lives only in the dashboard (so the inbox address isn't in the public repo);
+`keep_vars: true` in `wrangler.jsonc` makes deploys preserve it. Any variable that *is*
+in `wrangler.jsonc` is reset to the file's value on every deploy, so change those in
+the file, not the dashboard.
 
 ### 5d. Optional: an inbox on the domain
 

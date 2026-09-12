@@ -23,8 +23,12 @@
 
   // Non-secret configuration. Secrets (TURNSTILE_SECRET) are set with
   // `wrangler secret put`, never here.
+  //
+  // CONTACT_TO (the practice inbox) is deliberately NOT here: it is set in the
+  // dashboard under Settings > Variables and Secrets so the address stays out of
+  // the repository. keep_vars makes deploys preserve dashboard-only variables.
+  "keep_vars": true,
   "vars": {
-    "CONTACT_TO": "TODO-owner@example.com",
     "CONTACT_FROM": "no-reply@journeythroughbh.org",
     "TURNSTILE_HOSTNAMES": "journeythroughbh.org,www.journeythroughbh.org"
   },

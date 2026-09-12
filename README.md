@@ -97,7 +97,7 @@ dashboard under **Settings → Variables**:
 
 | Variable              | Purpose                                                   |
 |-----------------------|-----------------------------------------------------------|
-| `CONTACT_TO`          | Where contact-form messages are delivered. **TODO**       |
+| `CONTACT_TO`          | Practice inbox. Set in the dashboard only, not in the repo |
 | `CONTACT_FROM`        | Sender address on your onboarded Email Service domain     |
 | `TURNSTILE_HOSTNAMES` | Comma-separated hostnames the form may be submitted from  |
 
