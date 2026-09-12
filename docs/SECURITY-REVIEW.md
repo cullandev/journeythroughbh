@@ -46,9 +46,11 @@ Turnstile stops naive bots, but tokens can be solved by paid services at scale, 
 accepted submission sends one email. The Worker is stateless so it cannot throttle. A WAF
 rate-limiting rule closes this cheaply:
 
-- Zone → Security → WAF → Rate limiting rules → Create.
+- Zone → Security → Security rules → Create rule → Rate limiting rules.
 - Expression: `(http.request.uri.path eq "/api/contact" and http.request.method eq "POST")`
-- 10 requests per 1 minute per IP, block for 1 hour.
+- Free plan: characteristic IP (preset), 5 requests per 10 seconds, action Block for
+  10 seconds. Those are the only values the Free plan allows. Pro and above can use
+  a 1-minute period, Managed Challenge, and a longer block.
 
 Also enable Bot Fight Mode (Security → Bots) on the free plan.
 

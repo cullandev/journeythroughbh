@@ -248,7 +248,9 @@ Deploy. `https://www.journeythroughbh.org/about` should now land on
 **Rate limit the form endpoint.** The Worker has no state, so Cloudflare's WAF is the
 place. Domain → **Security → WAF → Rate limiting rules → Create rule**:
 `(http.request.uri.path eq "/api/contact" and http.request.method eq "POST")`,
-10 requests per 1 minute per IP, action Block for 1 hour. This is well above any real
+characteristic IP. On the Free plan the only allowed values are 5 requests per
+10 seconds, action Block, duration 10 seconds; use those. On Pro and above prefer
+10 requests per 1 minute, Managed Challenge, for 1 hour. Either is well above any real
 human's rate and stops scripted floods that bypass the browser.
 
 **Protect previews.** If pull-request preview URLs shouldn't be public,
