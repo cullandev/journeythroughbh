@@ -29,7 +29,7 @@ NAME = "Journey Through Behavioral Health"
 
 NAV = [
     ("/", "Home"),
-    ("/about", "About"),
+    ("/about", "About Me"),
     ("/services", "Services"),
     ("/what-to-expect", "What to expect"),
     ("/fees", "Fees &amp; insurance"),
@@ -44,7 +44,7 @@ LOGO = (
 
 def head(meta):
     canonical = SITE + (meta["path"] if meta["path"] != "/" else "/")
-    title = NAME if meta["path"] == "/" else f'{meta["title"]} · {NAME}'
+    title = NAME if meta["path"] == "/" else f'{meta["title"]} Ã‚· {NAME}'
     robots = '<meta name="robots" content="noindex">\n' if meta.get("noindex") == "true" else ""
     return f"""<!doctype html>
 <html lang="en">
@@ -77,12 +77,13 @@ def header(current):
         items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
     cur = ' aria-current="page"' if current == "/contact" else ""
     items.append(f'<li class="nav-cta"><a href="/contact"{cur}>Contact</a></li>')
-    return f"""<body>
+    return f"""<body class="{'home-page' if current == '/' else 'inner-page'}">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/">{LOGO}</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <a class="brand" href="/" aria-label="Journey Through Behavioral Health home">{LOGO}<span class="mobile-brand" aria-hidden="true"><span>Journey Through</span><small>Behavioral Health</small></span></a>
+    <img class="mobile-header-art" src="/images/logo-mark.webp" width="44" height="44" alt="">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-label">Menu</span><span class="hamburger" aria-hidden="true"></span></button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         {chr(10).join(items)}
@@ -116,7 +117,7 @@ def footer(scripts):
     <div>
       <h2>Practice</h2>
       <ul>
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">About Me</a></li>
         <li><a href="/fees">Fees &amp; insurance</a></li>
         <li><a href="/privacy">Privacy policy</a></li>
         <li><a href="/notice-of-privacy-practices">Notice of Privacy Practices</a></li>
