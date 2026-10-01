@@ -44,7 +44,7 @@ LOGO = (
 
 def head(meta):
     canonical = SITE + (meta["path"] if meta["path"] != "/" else "/")
-    title = NAME if meta["path"] == "/" else f'{meta["title"]} Ã‚· {NAME}'
+    title = NAME if meta["path"] == "/" else f'{meta["title"]} &middot; {NAME}'
     robots = '<meta name="robots" content="noindex">\n' if meta.get("noindex") == "true" else ""
     return f"""<!doctype html>
 <html lang="en">
