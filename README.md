@@ -44,6 +44,12 @@ Workers Builds just runs `wrangler deploy`. If you edit a page:
 python scripts/build.py
 ```
 
+**If you forget that step, the live site won't change.** Cloudflare deploys `public/`,
+not `src/pages/`. To make this impossible to get wrong, set the Workers Builds
+**Build command** to `python3 scripts/build.py` (Worker → Settings → Build). The build
+image ships Python 3.13, so the generator runs on Cloudflare before every deploy and
+`public/` is always rebuilt from the sources on `main`.
+
 `python scripts/build.py --check` fails if `public/` is out of date (handy in CI or a
 pre-commit hook). Python 3.8+ with no extra packages.
 
