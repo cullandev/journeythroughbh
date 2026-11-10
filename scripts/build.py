@@ -107,7 +107,7 @@ def footer(scripts):
       <h2>Contact</h2>
       <ul>
         <li><a href="/contact">Book a free 15-minute consultation</a></li>
-        <li><mark class="todo">TODO: phone</mark></li>
+        <li><a href="tel:+18609683114">(860) 968-3114</a></li>
         <li><mark class="todo">TODO: public email</mark></li>
         <li>Online across Connecticut &middot; in person in <mark class="todo">TODO: town</mark></li>
       </ul>
@@ -123,7 +123,7 @@ def footer(scripts):
       </ul>
     </div>
     <p class="fine">&copy; {year} {NAME}.
-      <mark class="todo">TODO: Clinician name</mark>, LCSW &middot;
+      Jessica Cullan, LCSW &middot;
       Licensed Clinical Social Worker, Connecticut, license <mark class="todo">TODO: number</mark>.
       No cookies, no trackers.</p>
   </div>

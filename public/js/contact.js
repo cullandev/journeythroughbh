@@ -87,7 +87,7 @@
           "<p>We'll reply by the method you chose, usually within " +
           "<mark class=\"todo\">TODO: response time</mark>. " +
           "If you don't hear back, check your spam folder or call " +
-          "<mark class=\"todo\">TODO: phone</mark>.</p>";
+          "<a href=\"tel:+18609683114\">(860) 968-3114</a>.</p>";
         form.replaceWith(done);
         done.focus();
         return;
