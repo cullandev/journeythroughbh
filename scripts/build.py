@@ -31,9 +31,7 @@ NAV = [
     ("/", "Home"),
     ("/about", "About Me"),
     ("/services", "Services"),
-    ("/what-to-expect", "What to expect"),
     ("/fees", "Fees &amp; insurance"),
-    ("/faq", "FAQ"),
 ]
 
 LOGO = (
