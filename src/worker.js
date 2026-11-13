@@ -140,7 +140,7 @@ ${contactLine}</p>
 
   try {
     await env.EMAIL.send({
-      from: { email: from, name: "Journey Through Behavioral Health" },
+      from: { email: from, name: "JTBH Website Referral" },
       to,
       replyTo: method === "email" ? email : undefined,
       subject: `New consultation request from ${name}`,
