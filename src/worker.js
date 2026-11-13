@@ -124,6 +124,20 @@ async function handleContact(request, env) {
     "Reminder: reply through a HIPAA-appropriate channel. Do not forward this email.",
   ];
 
+  // HTML version for bold labels. Every visitor-supplied value goes through
+  // escapeHtml, so nothing typed into the form can become markup.
+  const contactLine = method === "email"
+    ? `<strong>Email:</strong> ${escapeHtml(email)}`
+    : `<strong>Phone:</strong> ${escapeHtml(phone)}`;
+  const html = `<div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#222">
+<p>New consultation request from journeythroughbh.org</p>
+<p><strong>Name:</strong> ${escapeHtml(name)}<br>
+<strong>Preferred contact:</strong> ${escapeHtml(method)}<br>
+${contactLine}</p>
+<p><strong>Message:</strong><br>${message ? escapeHtml(message).replace(/\r?\n/g, "<br>") : "(none)"}</p>
+<p style="color:#666;font-size:13px">Reminder: reply through a HIPAA-appropriate channel. Do not forward this email.</p>
+</div>`;
+
   try {
     await env.EMAIL.send({
       from: { email: from, name: "Journey Through Behavioral Health" },
@@ -131,6 +145,7 @@ async function handleContact(request, env) {
       replyTo: method === "email" ? email : undefined,
       subject: `New consultation request from ${name}`,
       text: lines.join("\n"),
+      html,
     });
   } catch (err) {
     // Log the failure class only, never the content.
