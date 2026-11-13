@@ -154,7 +154,7 @@ or, if you add the beacon script, extend `script-src` and `connect-src` in both
 
 - [ ] Every `TODO:` below is resolved and `grep -r "TODO" src public` returns nothing
 - [ ] Fonts added to `public/fonts/` (see `public/fonts/README.md`)
-- [ ] Real headshot replaces `images/headshot-placeholder.svg`, with descriptive alt text
+- [x] Real headshot in place (`images/jessica-cullan.webp`)
 - [ ] Turnstile site key replaced in `contact.html`; secret set with `wrangler secret put`
 - [ ] Email Service domain onboarded; `CONTACT_TO` / `CONTACT_FROM` set
 - [ ] Custom domain attached
