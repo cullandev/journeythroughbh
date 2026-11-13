@@ -112,7 +112,7 @@ async function handleContact(request, env) {
   }
 
   const lines = [
-    "New message from the website contact form",
+    "New consultation request from journeythroughbh.org",
     "",
     `Name: ${name}`,
     `Preferred contact: ${method}`,
@@ -126,10 +126,10 @@ async function handleContact(request, env) {
 
   try {
     await env.EMAIL.send({
-      from: { email: from, name: "Website contact form" },
+      from: { email: from, name: "Journey Through Behavioral Health" },
       to,
       replyTo: method === "email" ? email : undefined,
-      subject: `Website inquiry from ${name}`,
+      subject: `New consultation request from ${name}`,
       text: lines.join("\n"),
     });
   } catch (err) {
