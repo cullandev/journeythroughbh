@@ -272,6 +272,36 @@ main { flex: 1; }
 .plain-list li:last-child { border-bottom: 1px solid var(--line); }
 .plain-list li strong { display: block; font-family: var(--font-head); font-size: var(--step-1); font-weight: 400; }
 
+/* Insurance and self-pay */
+.insurance-page .insurance-mobile { display: none; }
+.insurance-plans { margin-bottom: 0; }
+.insurance-plans li, .insurance-self {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: 0.85rem 0;
+  max-width: none;
+}
+.insurance-plans li { align-items: center; }
+.insurance-plans li > span { color: var(--sky); flex: none; }
+.insurance-self { margin: 0 0 var(--space-3); border-bottom: 1px solid var(--line); }
+.insurance-self > dd { margin: 0; color: var(--sky); font-size: var(--step--1); }
+.insurance-coverage .cta-band { padding: var(--space-3); }
+.insurance-coverage .btn { text-align: center; border-radius: var(--radius); }
+.insurance-coverage a[href^="tel:"] { display: inline-flex; align-items: center; min-height: 44px; }
+
+@media (max-width: 47.99em) {
+  .insurance-page .insurance-desktop { display: none; }
+  .insurance-page .insurance-mobile { display: revert; }
+  .insurance-plans li { font-family: var(--font-head); font-size: 1.125rem; }
+  .insurance-self-mobile { background: var(--leaf); margin: var(--space-3) 0; padding: var(--space-2); }
+  .insurance-self-mobile h2 { margin: 0; font-size: var(--step-2); }
+  .insurance-coverage { margin-inline: calc(-1 * var(--gutter)); }
+  .insurance-coverage .cta-band { border-radius: 0; padding: var(--space-3) var(--gutter); }
+  .insurance-coverage .cta-row { flex-direction: column; gap: 0.25rem; }
+  .insurance-coverage .btn { width: 100%; }
+}
+
 /* Two-column "label / content" rows used for who-I-work-with */
 .split { display: grid; gap: var(--space-3); }
 @media (min-width: 48em) { .split { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-4); } }

@@ -38,34 +38,38 @@
   </div>
 </header>
 <main id="main" tabindex="-1">
-<div class="wrap">
+<div class="wrap insurance-page">
   <div class="page-title">
-    <p class="eyebrow">Insurance</p>
-    <h1>Insurance and self-pay</h1>
-    <p class="lead">The plans I accept, and paying on your own.</p>
+    <p class="eyebrow"><span class="insurance-desktop">Insurance</span><span class="insurance-mobile">Insurance &amp; payment</span></p>
+    <h1><span class="insurance-desktop">Insurance and self-pay</span><span class="insurance-mobile">Simple, clear options.</span></h1>
+    <p class="lead"><span class="insurance-desktop">The plans I accept, and paying on your own.</span><span class="insurance-mobile">These plans are currently accepted.</span></p>
   </div>
 
-  <section class="split ins-row" aria-labelledby="plans">
-    <div>
-      <h2 id="plans">Plans I accept</h2>
-    </div>
-    <ul class="plain-list ins-plans">
-      <li>Aetna</li>
-      <li>Anthem Blue Cross Blue Shield</li>
-      <li>Optum</li>
-      <li>United Healthcare</li>
-	  <li>Self-pay</li>
+  <section aria-labelledby="plans">
+    <h2 id="plans"><span class="insurance-desktop">Plans I accept</span><span class="insurance-mobile">Insurance plans</span></h2>
+    <ul class="plain-list insurance-plans" role="list">
+      <li>Aetna <span aria-hidden="true">&#10003;</span></li>
+      <li>Anthem Blue Cross Blue Shield <span aria-hidden="true">&#10003;</span></li>
+      <li>Optum <span aria-hidden="true">&#10003;</span></li>
+      <li>UnitedHealthcare <span aria-hidden="true">&#10003;</span></li>
     </ul>
   </section>
 
- 
+  <dl class="insurance-self insurance-desktop">
+    <dt>Self-pay</dt>
+    <dd>Available</dd>
+  </dl>
+  <section class="insurance-self-mobile insurance-mobile" aria-labelledby="self-pay">
+    <p class="eyebrow">Another option</p>
+    <h2 id="self-pay">Self-pay is available.</h2>
+  </section>
 
-  <section class="section" aria-labelledby="ready">
+  <section class="insurance-coverage" aria-labelledby="ready">
     <div class="cta-band">
-      <h2 id="ready">Not sure what your plan covers?</h2>
-      <p class="prose">We can talk it through on a free 15-minute call.</p>
+      <h2 id="ready"><span class="insurance-desktop">Questions about coverage?</span><span class="insurance-mobile">Not sure what your plan covers?</span></h2>
+      <p class="prose insurance-mobile">We can talk it through on a free 15-minute call.</p>
       <div class="cta-row">
-        <a class="btn" href="/contact">Book a free 15-minute consultation</a>
+        <a class="btn" href="/contact"><span class="insurance-desktop">Book a free 15-minute consultation</span><span class="insurance-mobile">Book a free consultation</span></a>
         <span><a href="tel:+18609683114">(860) 968-3114</a></span>
       </div>
     </div>
