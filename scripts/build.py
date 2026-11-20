@@ -116,9 +116,6 @@ def footer(scripts):
       <ul>
         <li><a href="/about">About Me</a></li>
         <li><a href="/fees">Insurance</a></li>
-        <li><a href="/privacy">Privacy policy</a></li>
-        <li><a href="/notice-of-privacy-practices">Notice of Privacy Practices</a></li>
-        <li><a href="/crisis">Crisis resources</a></li>
       </ul>
     </div>
     <p class="fine">&copy; {year} {NAME}.
