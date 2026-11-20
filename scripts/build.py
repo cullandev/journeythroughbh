@@ -123,7 +123,7 @@ def footer(scripts):
     </div>
     <p class="fine">&copy; {year} {NAME}.
       Jessica Cullan, LCSW &middot;
-      Licensed Clinical Social Worker, Connecticut, license <mark class="todo">TODO: number</mark>.
+      Licensed Clinical Social Worker, Connecticut.
       No cookies, no trackers.</p>
   </div>
 </footer>{tags}
