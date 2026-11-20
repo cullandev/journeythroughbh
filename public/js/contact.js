@@ -84,8 +84,7 @@
         done.className = "notice is-success";
         done.setAttribute("tabindex", "-1");
         done.innerHTML = "<p><strong>Thanks, your message is on its way.</strong></p>" +
-          "<p>We'll reply by the method you chose, usually within " +
-          "<mark class=\"todo\">TODO: response time</mark>. " +
+          "<p>We'll reply by the method you chose, within 2 business days. " +
           "If you don't hear back, check your spam folder or call " +
           "<a href=\"tel:+18609683114\">(860) 968-3114</a>.</p>";
         form.replaceWith(done);
