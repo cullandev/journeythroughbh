@@ -30,8 +30,7 @@ NAME = "Journey Through Behavioral Health"
 NAV = [
     ("/", "Home"),
     ("/about", "About Me"),
-    ("/services", "Services"),
-    ("/fees", "Fees &amp; insurance"),
+    ("/fees", "Insurance"),
 ]
 
 LOGO = (
@@ -116,7 +115,7 @@ def footer(scripts):
       <h2>Practice</h2>
       <ul>
         <li><a href="/about">About Me</a></li>
-        <li><a href="/fees">Fees &amp; insurance</a></li>
+        <li><a href="/fees">Insurance</a></li>
         <li><a href="/privacy">Privacy policy</a></li>
         <li><a href="/notice-of-privacy-practices">Notice of Privacy Practices</a></li>
         <li><a href="/crisis">Crisis resources</a></li>

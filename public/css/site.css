@@ -294,7 +294,7 @@ main { flex: 1; }
 /* A thin ring set off from the arch, like a mat around a framed photo */
 .photo-slot { box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line); margin: 7px; }
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 1rem; font-size: var(--step--1); margin-top: var(--space-2); }
-.facts dt { color: var(--stone); }
+.facts dt { color: var(--stone); font-weight: 700; }
 .facts dd { margin: 0; }
 
 /* Fees: a ruled table, not cards */
