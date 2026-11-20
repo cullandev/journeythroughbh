@@ -100,7 +100,6 @@ def footer(scripts):
     <div class="crisis" role="note">
       <strong>This site is not for emergencies.</strong>
       If you are in crisis, call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline) or call 911.
-      <a href="/crisis">More crisis resources</a>
     </div>
     <div>
       <h2>Contact</h2>

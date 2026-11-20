@@ -1,7 +1,7 @@
 # Self-hosted fonts
 
-`TODO:` add these two files. Until they exist the site falls back to Georgia and the
-system UI font, and every page still works.
+Both files are in this folder, subset to Latin. If either is missing the site falls back to
+Georgia and the system UI font, and every page still works. To regenerate them:
 
 | File | Family | Source (SIL Open Font License) |
 |------|--------|--------------------------------|
