@@ -785,3 +785,10 @@ main { flex: 1; }
 
 /* About page: a little more air above each section heading */
 .about-sections h2:not(:first-child) { margin-top: 2.25rem; }
+
+/* Insurance page: label / content rows */
+.ins-row { border-top: 1px solid var(--line); padding-block: var(--space-4); }
+.ins-row:first-of-type { border-top: 0; padding-top: 0; }
+.ins-row h2 { font-size: var(--step-2); margin-bottom: 0.4rem; }
+.ins-plans { margin: 0; }
+.ins-plans li { max-width: none; font-family: var(--font-head); font-size: var(--step-2); line-height: 1.2; padding: 0.8rem 0; }
