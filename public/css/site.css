@@ -782,3 +782,6 @@ main { flex: 1; }
 .mobile-home .about .photo-slot{
   width:min(100%,245px);
   margin:7px auto 28px}
+
+/* About page: a little more air above each section heading */
+.about-sections h2:not(:first-child) { margin-top: 2.25rem; }
