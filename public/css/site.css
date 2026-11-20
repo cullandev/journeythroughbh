@@ -290,6 +290,14 @@ main { flex: 1; }
 .insurance-coverage .btn { text-align: center; border-radius: var(--radius); }
 .insurance-coverage a[href^="tel:"] { display: inline-flex; align-items: center; min-height: 44px; }
 
+@media (min-width: 48em) {
+  .insurance-page > :is(.insurance-options, .insurance-self, .insurance-coverage) {
+    width: min(100%, 640px);
+    margin-inline: auto;
+  }
+  .insurance-options h2 { text-align: center; }
+}
+
 @media (max-width: 47.99em) {
   .insurance-page .insurance-desktop { display: none; }
   .insurance-page .insurance-mobile { display: revert; }
