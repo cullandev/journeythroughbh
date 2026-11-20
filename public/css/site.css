@@ -13,6 +13,9 @@
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
   src: url("/fonts/AtkinsonHyperlegibleNext-Variable.woff2") format("woff2");
+  /* Digits are left out on purpose: this font's zero has a slash through it,
+     so numerals fall through to the system font instead. */
+  unicode-range: U+0000-002F, U+003A-00FF, U+2010-2027, U+2032-2033, U+20AC, U+2212;
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
