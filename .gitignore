@@ -6,3 +6,6 @@ node_modules/
 .DS_Store
 Thumbs.db
 .claude/launch.json
+
+# Generated Word templates (rebuild with brand/templates/make_templates.py)
+brand/templates/*.docx

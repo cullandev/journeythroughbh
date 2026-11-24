@@ -833,3 +833,7 @@ main { flex: 1; }
 .ins-row h2 { font-size: var(--step-2); margin-bottom: 0.4rem; }
 .ins-plans { margin: 0; }
 .ins-plans li { max-width: none; font-family: var(--font-head); font-size: var(--step-2); line-height: 1.2; padding: 0.8rem 0; }
+
+/* Home: insurance / getting started list under the therapist intro */
+.home-practical { margin-top: var(--space-3); }
+.band .split > div > h2 + p { margin-top: var(--space-2); }
